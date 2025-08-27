@@ -18,7 +18,7 @@ int jusment(char word){
 	}
 }
 
-//int jusment(char word);
+int jusment(char word);
 
 int main(){
 	char word;
@@ -27,6 +27,7 @@ int main(){
 		printf(">"); word = getch();
 		printf("%c",word);
 		printf("%c \n",jusment(word));
+		if ()
 	}
 	
 	//jusment(word);
