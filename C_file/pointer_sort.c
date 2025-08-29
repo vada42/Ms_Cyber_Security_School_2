@@ -36,40 +36,37 @@ int main(){
         int eng_length;
         int mat_length;
         
-                kor_length = sizeof(kor)/sizeof(kor[0]);
-                eng_length = sizeof(eng)/sizeof(eng[0]);
-                mat_length = sizeof(mat)/sizeof(mat[0]);
-                
-                sort(kor, kor_length);
-                printf("kor_sort\n");
-                for(i = 0; i<kor_length; i++){
-                        printf("%3d",kor[i]);
-                }
-                printf("\n");
-                
-                printf("eng_sort\n");
-                sort(eng, eng_length);
-                for(i = 0; i<eng_length; i++){
-                        printf("%3d",eng[i]);
-                }
-                printf("\n");
-                
-                printf("mat_sort\n");
-                sort(mat, mat_length);
-                for(i = 0; i<mat_length; i++){
-                        printf("%3d",mat[i]);
-                }
-                printf("\n");
+        kor_length = sizeof(kor)/sizeof(kor[0]);
+        eng_length = sizeof(eng)/sizeof(eng[0]);
+        mat_length = sizeof(mat)/sizeof(mat[0]);
+        
+        sort(kor, kor_length);
+        printf("kor_sort\n");
+        for(i = 0; i<kor_length; i++){
+                printf("%3d",kor[i]);
+        }
+        printf("\n");
+        
+        printf("eng_sort\n");
+        sort(eng, eng_length);
+        for(i = 0; i<eng_length; i++){
+                printf("%3d",eng[i]);
+        }
+        printf("\n");
+        
+        printf("mat_sort\n");
+        sort(mat, mat_length);
+        for(i = 0; i<mat_length; i++){
+                printf("%3d",mat[i]);
+        }
+        printf("\n");
         
         for(i = 0; i<10; i++){
                 if(i==0){//title line
                         for(j = 0; j<5; j++)printf("%s  ",title[j]);
                         printf("\n");
                 }
-                printf("%d  %s  %3d   %3d   %3d\n",i,name[i],kor[i],eng[i],mat[i]);
-                
-                
-                
+            printf("%d  %s  %3d   %3d   %3d\n",i,name[i],kor[i],eng[i],mat[i]);      
         }
 }
 
