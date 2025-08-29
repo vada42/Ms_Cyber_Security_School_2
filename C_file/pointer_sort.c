@@ -5,15 +5,15 @@ int kor[] = {10,20,30,40,50};
 int eng[] = {50,60,80,30,20};
 int mat[] = {46,96,85,12,30};
 void sort(int arr[], int length);//sort prototype
-void swap(int a, int b);//swap prototype
+void swap(int *a, int *b);//swap prototype
 
 
-void swap(int a, int b){
+void swap(int *a, int *b){
 	int tmp;
 	if(a>b){
-		a = tmp;
-		a = b;
-		b = tmp;
+		tmp = *a;
+		*a = *b;
+		*b = tmp;
 	}
 }
 
@@ -22,9 +22,9 @@ void sort(int arr[],int length){
 	int j;
 	int tmp;
 	for(i=0; i<length; i++){
-		for(j=0; j<length-i; j++){
+		for(j=0; j<length-i-1; j++){
 			if(arr[j]>arr[j+1]){
-				swap(arr[j],arr[j+1]);
+				swap(&arr[j],&arr[j+1]);
 			}
 		}
 	}
@@ -51,14 +51,14 @@ int main(){
                 
                 printf("eng_sort\n");
                 sort(eng, eng_length);
-                for(i = 0; i<kor_length; i++){
+                for(i = 0; i<eng_length; i++){
                         printf("%3d",eng[i]);
                 }
                 printf("\n");
                 
                 printf("mat_sort\n");
                 sort(mat, mat_length);
-                for(i = 0; i<kor_length; i++){
+                for(i = 0; i<mat_length; i++){
                         printf("%3d",mat[i]);
                 }
                 printf("\n");
