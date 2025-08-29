@@ -4,24 +4,22 @@ char* name[] = {"pack","kim","sion","junhyc","yee"};
 int kor[] = {10,20,30,40,50};
 int eng[] = {50,60,80,30,20};
 int mat[] = {46,96,85,12,30};
-void sort(int arr[], int length);//sort prototype
+void sort(int *arr, int length);//sort prototype
 void swap(int *a, int *b);//swap prototype
 
 
 void swap(int *a, int *b){
 	int tmp;
-	if(a>b){
-		tmp = *a;
-		*a = *b;
-		*b = tmp;
-	}
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 void sort(int arr[],int length){
 	int i;
 	int j;
 	int tmp;
-	for(i=0; i<length; i++){
+	for(i=0; i<length-1; i++){
 		for(j=0; j<length-i-1; j++){
 			if(arr[j]>arr[j+1]){
 				swap(&arr[j],&arr[j+1]);

@@ -1,36 +1,38 @@
 #include <stdio.h>
-#include <conio.h>
-//int search(int array);
+int search(int array[],int length);
+
+int search(int arr[],int length){
+		int count = 0;
+		int min = arr[0];
+		while(count<length){
+			if (arr[count] < min){
+				min = arr[count];
+			}
+			count++;
+		}
+	return min;
+}
 
 int main(){
-	int c; 
-	int array[5]={};
-	int i = 0;
-	for(i=0; i<6; i++){
-		c = getch();
-		array[i] =c;
+	int num; 
+	int array[5]={0};
+	int i;
+	int length;
+	for(i=0; i<5; i++){
+		scanf("%d",&num);
+		array[i] =num;
+		printf("%d\n",array[i]);
 	}
-	search(array);
+	printf("\n");
+	for(i=0; i<5; i++){
+		printf("%d",array[i]);
+	}
+	printf("\n");
+	printf("%d\n",sizeof(array)/sizeof(array[0]));
+	length = sizeof(array)/sizeof(array[0]);
+	printf("%d",search(array,length));
 	return 0;
 	
 }
 
-int sort(int arr[]){
-		int count = 0;
-		int len = sizeof(arr);
-		int sort_arr[]={};
-		while(count<len){
-			if (arr[count] < arr[count+1]){
-				sort_arr[count] = arr[count];
-			}
-			else if (arr[count] > arr[count+1]){
-				sort_arr[count] = arr[count+1];
-			}
-			count++;
-		}
-		return sort_arr;
-	}
-	
-int search(int arr[]){
-	return sort(arr)[0];
-}
+
